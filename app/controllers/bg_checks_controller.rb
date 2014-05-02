@@ -5,7 +5,12 @@ class BgChecksController < ApplicationController
   # GET /bg_checks
   # GET /bg_checks.json
   def index
-    @bg_checks = BgCheck.all
+    @requested = BgCheck.requested
+    @crim_passed = BgCheck.passed_criminal
+    @child_abuse_passed = BgCheck.passed_child_abuse
+    @under_review = BgCheck.criminal_failed
+    @not_cleared = BgCheck.not_cleared
+    @expired = BgCheck.expired
   end
 
   # POST /bg_checks

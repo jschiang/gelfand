@@ -29,10 +29,145 @@
         </thead>
 
         <tbody>
-          <% @bg_checks.each do |bg_check| %>
+          <% @requested.each do |bg_check| %>
             <tr>
               <td><%= bg_check.individual.name %>
               <td><%= bg_check.format_status %></td>
+              <td><%= bg_check.criminal_date %></td>
+              <td><%= bg_check.child_abuse_date %></td>
+              <td><%= link_to 'Edit', edit_bg_check_path(bg_check) %></td>
+              <td><%= link_to 'Destroy', bg_check, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr> 
+            <th>For</th>
+            <th>Status</th>
+            <th>Criminal date</th>
+            <th>Child abuse date</th>
+
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @under_review.each do |bg_check| %>
+            <tr>
+              <td><%= bg_check.individual.name %>
+              <td><%= bg_check.format_status %></td>
+              <td><%= bg_check.criminal_date %></td>
+              <td><%= bg_check.child_abuse_date %></td>
+              <td><%= link_to 'Edit', edit_bg_check_path(bg_check) %></td>
+              <td><%= link_to 'Destroy', bg_check, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr> 
+            <th>For</th>
+            <th>Status</th>
+            <th>Criminal date</th>
+            <th>Child abuse date</th>
+
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @not_cleared.each do |bg_check| %>
+            <tr>
+              <td><%= bg_check.individual.name %>
+              <td><%= bg_check.format_status %></td>
+              <td><%= bg_check.criminal_date %></td>
+              <td><%= bg_check.child_abuse_date %></td>
+              <td><%= link_to 'Edit', edit_bg_check_path(bg_check) %></td>
+              <td><%= link_to 'Destroy', bg_check, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr> 
+            <th>For</th>
+            <th>Status</th>
+            <th>Criminal date</th>
+            <th>Child abuse date</th>
+
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @crim_passed.each do |bg_check| %>
+            <tr>
+              <td><%= bg_check.individual.name %>
+              <td><%= bg_check.format_status %></td>
+              <td><%= bg_check.criminal_date %></td>
+              <td><%= bg_check.child_abuse_date %></td>
+              <td><%= link_to 'Edit', edit_bg_check_path(bg_check) %></td>
+              <td><%= link_to 'Destroy', bg_check, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr> 
+            <th>For</th>
+            <th>Status</th>
+            <th>Criminal date</th>
+            <th>Child abuse date</th>
+
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @child_abuse_passed.each do |bg_check| %>
+            <tr>
+              <td><%= bg_check.individual.name %>
+              <td><%= bg_check.format_status %></td>
+              <td><%= bg_check.criminal_date %></td>
+              <td><%= bg_check.child_abuse_date %></td>
+              <td><%= link_to 'Edit', edit_bg_check_path(bg_check) %></td>
+              <td><%= link_to 'Destroy', bg_check, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr> 
+            <th>For</th>
+            <th>Status</th>
+            <th>Criminal date</th>
+            <th>Child abuse date</th>
+
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @expired.each do |bg_check| %>
+            <tr>
+              <td><%= bg_check.individual.name %>
+              <td>Expired</td>
               <td><%= bg_check.criminal_date %></td>
               <td><%= bg_check.child_abuse_date %></td>
               <td><%= link_to 'Edit', edit_bg_check_path(bg_check) %></td>
