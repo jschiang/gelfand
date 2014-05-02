@@ -36,8 +36,8 @@
               <%= f.radio_button :status, 4, :checked => @bg_check.status==4 %>
               <%= f.label :status, "Not Cleared", :value => 4 %>
 
-              <%= f.radio_button :status, 5, :checked => @bg_check.status==5 %>
-              <%= f.label :status, "Expired", :value => 5 %>
+            <!--  <%= f.radio_button :status, 5, :checked => @bg_check.status==5 %>
+              <%= f.label :status, "Expired", :value => 5 %> -->
         </div>  
       </div>
     </div>
@@ -49,6 +49,11 @@
           <%= f.input :child_abuse_date, :label => "Child Abuse Date", :as => :string, :input_html => {:class => "datepicker"} %>   
       </div>
     </div>
+
+    <% if @bg_check.individual.nil? %>
+      <%= f.input :individual_id, :collection => Individual.alphabetical.all %>
+    <% end %>
+
   <% elsif current_user.member?%>
     <%= f.hidden_field :status, :value => 0, :readonly => true %>
   <% end %>

@@ -15,6 +15,7 @@ class BgChecksController < ApplicationController
 
   # POST /bg_checks
   # POST /bg_checks.json
+
   def create
     
     @bg_check = BgCheck.new(bg_check_params)

@@ -72,17 +72,15 @@ class BgCheck < ActiveRecord::Base
 
     # Method to update the status of a bg_check if the date is updated
     def auto_update_status
+        unless self.status > 1
             if self.child_abuse_date
-                if Date.today > self.child_abuse_date >> 36
-                    self.status = 5
-                else
-                    self.status = 2
-                end
+                self.status = 2
             elsif self.criminal_date
                 self.status = 1
             else
                 self.status = 0
             end
+        end
     end
 
 end
